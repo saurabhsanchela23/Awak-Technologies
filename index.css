@@ -1,0 +1,187 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('./images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Login container */
+.login-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    transform: translateY(50px);
+    width: 400px;
+}
+
+/* Spinner styling */
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form styles */
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    display: none;
+}
+
+#togglePassword {
+    position:relative;
+    left: 0;
+    right: 0px;
+    top: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 12px;
+    padding: 0;
+}
+
+/* Styling for the Remember Me section */
+.remember-me-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection when clicking the checkbox */
+}
+
+/* Hide the default checkbox */
+.remember-me-label input[type="checkbox"] {
+    appearance: none; /* Remove default checkbox styling */
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Checkbox checked state styling */
+.remember-me-label input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Create checkmark when checked */
+.remember-me-label input[type="checkbox"]:checked::before {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    left: 4px;
+}
+
+/* Hover effect */
+.remember-me-label input[type="checkbox"]:hover {
+    border-color: #007bff;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .login-container {
+        width: 300px;
+        padding: 30px;
+    }
+
+    input {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    form h2 {
+        font-size: 18px;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
+}

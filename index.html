@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWAK</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="login-container">
+        <form id="loginForm" method="post" autocomplete="on"> <!-- Added method="post" and autocomplete="on" -->
+            <h2>AWAK TECHNOLOGIES</h2>
+
+            <!-- Username field with autocomplete -->
+            <div class="input-group">
+                <label for="username">Username/Email</label>
+                <input type="text" id="username" name="username" placeholder="Enter your email" autocomplete="username">
+            </div>
+
+            <!-- Password field with show/hide functionality -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password">
+                <button type="button" id="togglePassword">Show</button> <!-- Show/Hide password button -->
+            </div>
+
+            <!-- Remember Me checkbox -->
+            <div class="input-group remember-me-group">
+                <label for="rememberMe" class="remember-me-label">
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                    Remember me
+                </label>
+            </div>
+
+            <!-- Loading spinner -->
+            <div id="spinner" class="spinner" style="display: none;"></div>
+
+            <!-- Login button -->
+            <button type="submit" id="submitButton">Login</button>
+
+            <div id="error-msg" class="error-message"></div>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
